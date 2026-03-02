@@ -1,0 +1,51 @@
+.header {
+    background-color: #ffffff;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid #e2e8f0;
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @media (max-width: $bp-tablet) {
+            flex-direction: column;
+            gap: 15px;
+        }
+    }
+
+    .logo {
+        font-size: 24px;
+        font-weight: 800;
+        color: $color-dark;
+        text-decoration: none;
+
+        span {
+            color: $color-primary;
+        }
+    }
+
+    .nav {
+        display: flex;
+        gap: 25px;
+
+        a {
+            text-decoration: none;
+            color: $color-text;
+            font-weight: 500;
+            transition: color 0.3s;
+
+            &:hover {
+                color: $color-primary;
+            }
+        }
+    }
+
+    .btn--small {
+        @include button($color-primary);
+        padding: 8px 20px;
+    }
+}
