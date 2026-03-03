@@ -1,0 +1,29 @@
+@mixin button($bg-color: $color-primary, $text-color: #ffffff) {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 14px 32px;
+    background-color: $bg-color;
+    color: $text-color;
+    text-decoration: none;
+    border-radius: 50px; // Кнопки в форме таблетки
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    border: 2px solid $bg-color;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); // Визуальный объем (тень)
+    cursor: pointer;
+
+    &:hover {
+        transform: translateY(-3px); // Кнопка "подпрыгивает"
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); // Тень увеличивается
+        background-color: darken($bg-color, 8%);
+        border-color: darken($bg-color, 8%);
+        color: $text-color;
+    }
+
+    &:active {
+        transform: translateY(1px); // Эффект нажатия
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+}

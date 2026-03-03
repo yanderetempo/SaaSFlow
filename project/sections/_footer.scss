@@ -1,0 +1,42 @@
+.footer {
+    background-color: $color-dark;
+    color: #94a3b8;
+    padding: 40px 0;
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @media (max-width: $bp-tablet) {
+            flex-direction: column;
+            gap: 20px;
+            text-align: center;
+        }
+    }
+
+    &__logo {
+        font-size: 24px;
+        font-weight: 800;
+        color: #ffffff;
+
+        span {
+            color: $color-primary;
+        }
+    }
+
+    &__links {
+        display: flex;
+        gap: 20px;
+
+        a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.3s;
+
+            &:hover {
+                color: #ffffff;
+            }
+        }
+    }
+}

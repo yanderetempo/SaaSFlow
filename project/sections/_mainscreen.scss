@@ -1,0 +1,91 @@
+.mainscreen {
+    background: linear-gradient(135deg, $color-primary 0%, $color-accent 100%);
+    padding: 80px 0; 
+    overflow: hidden;
+    color: #ffffff;
+
+    &__content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px; 
+
+        @media (max-width: $bp-desktop) {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+
+    &__text {
+        flex: 1;
+        max-width: 550px;
+
+        h1 {
+            font-size: 42px; 
+            color: #ffffff;
+            line-height: 1.2;
+            margin-bottom: 20px;
+
+            span {
+                color: #fef08a;
+            }
+
+            @media (max-width: $bp-tablet) {
+                font-size: 32px;
+            }
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #e0e7ff;
+        }
+    }
+
+    &__actions {
+        display: flex;
+        gap: 15px;
+
+        @media (max-width: $bp-desktop) {
+            justify-content: center;
+        }
+
+        @media (max-width: $bp-tablet) {
+            flex-direction: column;
+        }
+
+        .btn {
+            @include button(#ffffff, $color-primary);
+
+            &--outline {
+                @include button(transparent, #ffffff);
+                border: 2px solid #ffffff;
+                box-shadow: none;
+                
+                &:hover {
+                    background-color: #ffffff;
+                    color: $color-primary;
+                }
+            }
+        }
+    }
+
+    &__image {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        
+        img {
+            width: 100%;
+            max-width: 320px; 
+            border-radius: 16px;
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.4);
+            transform: perspective(1000px) rotateY(-10deg);
+            transition: transform 0.5s ease;
+
+            &:hover {
+                transform: perspective(1000px) rotateY(0deg) scale(1.05);
+            }
+        }
+    }
+}

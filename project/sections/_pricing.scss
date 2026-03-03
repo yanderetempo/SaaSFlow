@@ -1,0 +1,103 @@
+.pricing {
+    padding: 100px 0;
+
+    &__grid {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        align-items: center;
+
+        @media (max-width: $bp-tablet) {
+            flex-direction: column;
+        }
+    }
+
+    .price-card {
+        background: #ffffff;
+        padding: 40px;
+        border-radius: $radius;
+        width: 100%;
+        max-width: 350px;
+        border: 1px solid #e2e8f0;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        position: relative;
+
+        h3 {
+            font-size: 24px;
+            color: $color-dark;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            font-size: 48px;
+            font-weight: 800;
+            color: $color-dark;
+            margin-bottom: 30px;
+
+            span {
+                font-size: 18px;
+                color: #64748b;
+                font-weight: normal;
+            }
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 30px;
+
+            li {
+                margin-bottom: 15px;
+                padding-left: 25px;
+                position: relative;
+
+                &::before {
+                    content: '✓';
+                    color: $color-primary;
+                    position: absolute;
+                    left: 0;
+                    font-weight: bold;
+                }
+            }
+        }
+
+    
+        .btn {
+            @include button($color-primary);
+            width: 100%;
+            
+            &--outline {
+                @include button(transparent, $color-primary);
+                width: 100%;
+                
+                &:hover {
+                    background-color: $color-primary;
+                    color: #fff;
+                }
+            }
+        }
+
+    
+        &--popular {
+            border: 2px solid $color-primary;
+            transform: scale(1.05);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+
+            @media (max-width: $bp-tablet) {
+                transform: scale(1);
+            }
+
+            .badge {
+                position: absolute;
+                top: -15px;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: $color-primary;
+                color: #fff;
+                padding: 5px 15px;
+                border-radius: 20px;
+                font-size: 14px;
+                font-weight: bold;
+            }
+        }
+    }
+}
